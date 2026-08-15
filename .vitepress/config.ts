@@ -25,7 +25,10 @@ export default defineConfig({
     outline: "deep",
     sidebar: [],
 
-    socialLinks: [{ icon: "github", link: "https://github.com/FBIKdot" }],
+    socialLinks: [
+      { icon: "github", link: "https://github.com/FBIKdot" },
+      { icon: "bilibili", link: "https://space.bilibili.com/470453924" },
+    ],
 
     footer: {
       copyright: "Copyright (c) 2026-present, FBIK.",
