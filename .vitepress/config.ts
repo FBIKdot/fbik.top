@@ -21,7 +21,6 @@ export default defineConfig({
       { text: "Blog", link: "/blog" },
       { text: "Tags", link: "/blog/tags" },
       { text: "Friends", link: "/friends" },
-      { text: "RSS Feed", link: "/feed.rss", target: "_Blank" },
     ],
     outline: "deep",
     sidebar: [],
