@@ -55,6 +55,7 @@ const authors = computed<Author[]>(() => {
     <template #doc-before>
       <header v-if="frontmatter.date" class="post-meta">
         <h1 class="post-title">{{ frontmatter.title }}</h1>
+        
         <p class="post-date">
           {{ formatDate(frontmatter.date) }} ·
           <template v-for="(author, i) in authors" :key="author.name + i">
@@ -65,6 +66,9 @@ const authors = computed<Author[]>(() => {
             >{{ author.name }}</a>
           </template>
         </p>
+        <blockquote v-if="frontmatter.description" class="post-description">
+          {{ frontmatter.description }}
+        </blockquote>
       </header>
     </template>
     <template #doc-footer-before>
@@ -103,6 +107,13 @@ const authors = computed<Author[]>(() => {
 .post-date {
   margin: 8px 0 0;
   font-size: 14px;
+  color: var(--vp-c-text-2);
+}
+
+.post-description {
+  margin: 16px 0;
+  border-left: 2px solid var(--vp-c-divider);
+  padding-left: 16px;
   color: var(--vp-c-text-2);
 }
 
