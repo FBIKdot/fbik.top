@@ -15,6 +15,23 @@ function isExternal(url: string): boolean {
   return /^https?:\/\//.test(url);
 }
 
+// 与 VitePress 默认 slugify 一致，保证标题锚点与正文标题规则相同
+function slugify(str: string): string {
+  return str
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[\u0000-\u001f]/g, "")
+    .replace(/[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g, "-")
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/^(\d)/, "_$1")
+    .toLowerCase();
+}
+
+const titleSlug = computed(() =>
+  frontmatter.value.title ? slugify(String(frontmatter.value.title)) : ""
+);
+
 // 当前文章的标签列表（兼容 tag / tags 两种 frontmatter）
 const tags = computed<string[]>(() => {
   const value = frontmatter.value.tag ?? frontmatter.value.tags;
@@ -54,7 +71,16 @@ const authors = computed<Author[]>(() => {
   <DefaultTheme.Layout>
     <template #doc-before>
       <header v-if="frontmatter.date" class="post-meta">
-        <h1 class="post-title">{{ frontmatter.title }}</h1>
+        <h1 class="post-title" :id="titleSlug">
+          {{ frontmatter.title }}
+          <a
+            v-if="titleSlug"
+            class="header-anchor"
+            :href="`#${titleSlug}`"
+            :aria-label="`Permalink to ${frontmatter.title}`"
+            >&#x200B;</a
+          >
+        </h1>
 
         <p class="post-date">
           {{ formatDate(frontmatter.date) }} ·
@@ -94,11 +120,34 @@ const authors = computed<Author[]>(() => {
 }
 
 .post-title {
+  position: relative;
   margin: 0;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 40px;
   font-size: 28px;
+}
+
+.post-title .header-anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  font-weight: 500;
+  user-select: none;
+  opacity: 0;
+  text-decoration: none;
+  transition: color 0.25s, opacity 0.25s;
+}
+
+.post-title .header-anchor:before {
+  content: "#";
+}
+
+.post-title:hover .header-anchor,
+.post-title .header-anchor:focus {
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
