@@ -20,4 +20,4 @@ My most used technologies:
 ![JavaScript,TypeScript,Nodejs,C,C#](https://skillicons.dev/icons?i=js,ts,nodejs,c,cs)
 
 [Blog](/blog/) | [Github](https://github.com/FBIKdot) |
-[BiliBili](https://space.bilibili.com/470453924)
+[BiliBili](https://space.bilibili.com/470453924) | [Email](mailto:fbik@fbik.top)
