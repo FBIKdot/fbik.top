@@ -11,12 +11,5 @@
     "oxfmt": "^0.63.0",
     "vitepress": "2.0.0-alpha.19",
     "vitepress-plugin-rss": "^0.4.4"
-  },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^11.20.0",
-      "onFail": "download"
-    }
   }
 }
