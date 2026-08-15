@@ -2,6 +2,10 @@
   "name": "blognext",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,22 +13,17 @@
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "devDependencies": {
+    "@catppuccin/vitepress": "^0.1.2",
+    "oxfmt": "^0.63.0",
+    "vitepress": "2.0.0-alpha.19",
+    "vitepress-plugin-rss": "^0.4.4"
+  },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
       "version": "^11.20.0",
       "onFail": "download"
     }
-  },
-  "type": "module",
-  "devDependencies": {
-    "vitepress": "2.0.0-alpha.19"
-  },
-  "dependencies": {
-    "oxfmt": "^0.63.0",
-    "vitepress-plugin-rss": "^0.4.4"
   }
 }
