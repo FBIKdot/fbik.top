@@ -24,6 +24,7 @@
     "vitepress": "2.0.0-alpha.19"
   },
   "dependencies": {
-    "oxfmt": "^0.63.0"
+    "oxfmt": "^0.63.0",
+    "vitepress-plugin-rss": "^0.4.4"
   }
 }

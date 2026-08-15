@@ -3,7 +3,7 @@ title: 重启我的博客……再次
 description: 又又又一次重启我的博客，并再次更换主题与框架
 date: 2026-01-08
 tag:
-  - blog
+  - Blog
 ---
 
 从最早使用 Jekyll ，到手写 html，再到后面换成

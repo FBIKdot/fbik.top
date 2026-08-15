@@ -3,7 +3,7 @@ title: 纯静态 Markdown Negotiation
 description: 基于 Cloudflare Rules，纯静态实现 Markdown Negotiation
 date: 2026-08-02
 tag:
-  - blog
+  - Blog
   - Web
 ---
 
