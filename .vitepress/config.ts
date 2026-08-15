@@ -11,6 +11,9 @@ export default defineConfig({
   lang: "zh-cn",
   lastUpdated: true,
   cleanUrls: true,
+  sitemap: {
+    hostname: "https://fbik.top",
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
