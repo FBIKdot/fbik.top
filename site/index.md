@@ -17,7 +17,7 @@ hero:
 
 My most used technologies:
 
-![js,ts,nodejs,deno,c,cs](https://skillicons.dev/icons?i=js,ts,nodejs,deno,c,cs)
+![JavaScript,TypeScript,Nodejs,C,C#](https://skillicons.dev/icons?i=js,ts,nodejs,c,cs)
 
 [Blog](/blog/) | [Github](https://github.com/FBIKdot) |
 [BiliBili](https://space.bilibili.com/470453924)
