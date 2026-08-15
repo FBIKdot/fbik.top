@@ -15,6 +15,7 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Blog", link: "/blog" },
+      { text: "Tags", link: "/blog/tags" },
     ],
     outline: "deep",
     sidebar: [],

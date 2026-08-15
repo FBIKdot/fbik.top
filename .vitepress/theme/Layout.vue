@@ -15,6 +15,14 @@ function isExternal(url: string): boolean {
   return /^https?:\/\//.test(url);
 }
 
+// 当前文章的标签列表（兼容 tag / tags 两种 frontmatter）
+const tags = computed<string[]>(() => {
+  const value = frontmatter.value.tag ?? frontmatter.value.tags;
+  if (typeof value === "string") return [value];
+  if (Array.isArray(value)) return value.map((tag) => String(tag));
+  return [];
+});
+
 interface Author {
   name: string;
   link: string;
@@ -59,6 +67,17 @@ const authors = computed<Author[]>(() => {
         </p>
       </header>
     </template>
+    <template #doc-footer-before>
+      <div v-if="tags.length" class="post-tags">
+        <span class="post-tags-label">Tags:</span>
+        <a
+          v-for="tag in tags"
+          :key="tag"
+          class="post-tag"
+          :href="`/blog/tags/${encodeURIComponent(tag)}`"
+        >{{ tag }}</a>
+      </div>
+    </template>
   </DefaultTheme.Layout>
 </template>
 
@@ -85,6 +104,28 @@ const authors = computed<Author[]>(() => {
   margin: 8px 0 0;
   font-size: 14px;
   color: var(--vp-c-text-2);
+}
+
+.post-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.post-tags-label {
+  color: var(--vp-c-text-2);
+}
+
+.post-tag {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.post-tag:hover {
+  color: var(--vp-c-brand-2);
 }
 </style>
 

@@ -1,3 +1,7 @@
+---
+lastUpdated: false
+---
+
 # blog
 
 <script setup>
