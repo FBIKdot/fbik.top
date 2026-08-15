@@ -55,15 +55,17 @@ const authors = computed<Author[]>(() => {
     <template #doc-before>
       <header v-if="frontmatter.date" class="post-meta">
         <h1 class="post-title">{{ frontmatter.title }}</h1>
-        
+
         <p class="post-date">
           {{ formatDate(frontmatter.date) }} ·
           <template v-for="(author, i) in authors" :key="author.name + i">
-            {{ +i > 0 ? ", " : "" }}<a
+            {{ +i > 0 ? ", " : ""
+            }}<a
               :href="author.link"
               :target="isExternal(author.link) ? '_blank' : undefined"
               :rel="isExternal(author.link) ? 'noopener noreferrer' : undefined"
-            >{{ author.name }}</a>
+              >{{ author.name }}</a
+            >
           </template>
         </p>
         <blockquote v-if="frontmatter.description" class="post-description">
@@ -79,7 +81,8 @@ const authors = computed<Author[]>(() => {
           :key="tag"
           class="post-tag"
           :href="`/blog/tags/${encodeURIComponent(tag)}`"
-        >{{ tag }}</a>
+          >{{ tag }}
+        </a>
       </div>
     </template>
   </DefaultTheme.Layout>
