@@ -1,0 +1,8 @@
+"$schema" = "https://esm.sh/wrangler@4.66.0/config-schema.json"
+name = "fbik-blog"
+compatibility_date = "2026-08-16"
+workers_dev = false
+
+[assets]
+directory = "./vitepress/dist"
+not_found_handling = "404-page"
