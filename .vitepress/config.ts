@@ -24,6 +24,10 @@ export default defineConfig({
     sidebar: [],
 
     socialLinks: [{ icon: "github", link: "https://github.com/FBIKdot" }],
+
+    footer: {
+      copyright: "Copyright (c) 2026-present, FBIK.",
+    },
   },
   vite: {
     plugins: [
