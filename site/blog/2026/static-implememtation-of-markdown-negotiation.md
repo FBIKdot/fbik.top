@@ -1,6 +1,6 @@
 ---
 title: 纯静态 Markdown Negotiation
-description: 基于 Cloudflare Rules，纯静态实现 Markdown Negotiation
+description: 基于 Cloudflare Rules，纯静态实现 Markdown Negotiation。
 date: 2026-08-02
 tag:
   - Blog
@@ -17,7 +17,7 @@ Markdown Negotiation 复用了服务器的
 
 ![Server-driven content negotiation image from mdn](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Content_negotiation/httpnegoserver.png)
 
-Markdown Negotiation 就是复用这个机制，在首选内容为 Markdown 时返回 Markdown。
+Markdown Negotiation 就是在首选内容为 Markdown 时返回 Markdown。
 
 Cloudflare 在 2026 年 2 月份推出了
 [Markdown for Agents](https://blog.cloudflare.com/markdown-for-agents/)，通过这个功能可以一键让网站
